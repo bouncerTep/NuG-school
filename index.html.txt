@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUG — Школа іноземних мов</title>
+
+    <style>
+        :root {
+            --primary: #2f80ed;
+            --dark: #1b1b1b;
+            --light: #f9f9f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), #56ccf2);
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 20px;
+            opacity: 0.95;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+            color: var(--primary);
+        }
+
+        .about,
+        .features,
+        .courses,
+        .reviews {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .cta {
+            background: var(--primary);
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .cta h2 {
+            color: #fff;
+        }
+
+        .cta a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 30px;
+            background: #fff;
+            color: var(--primary);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>NUG</h1>
+    <p>Школа іноземних мов нового покоління</p>
+</header>
+
+<section>
+    <h2>Про школу</h2>
+    <div class="about">
+        <div class="card">
+            <h3>Сучасний підхід</h3>
+            <p>Ми навчаємо мов через практику, живе спілкування та актуальні теми, а не суху теорію.</p>
+        </div>
+        <div class="card">
+            <h3>Професійні викладачі</h3>
+            <p>Наші викладачі — це експерти з досвідом та індивідуальним підходом до кожного студента.</p>
+        </div>
+        <div class="card">
+            <h3>Реальний результат</h3>
+            <p>Ви починаєте говорити іноземною мовою вже з перших занять.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Наші курси</h2>
+    <div class="courses">
+        <div class="card">
+            <h3>Англійська мова</h3>
+            <p>Для початківців та просунутих. Розмовна, бізнес та підготовка до іспитів.</p>
+        </div>
+        <div class="card">
+            <h3>Німецька мова</h3>
+            <p>Для роботи, навчання та переїзду за кордон.</p>
+        </div>
+        <div class="card">
+            <h3>Індивідуальні заняття</h3>
+            <p>Максимум уваги та персональна програма навчання.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Відгуки студентів</h2>
+    <div class="reviews">
+        <div class="card">
+            ⭐⭐⭐⭐⭐
+            <p>«Чудова школа! Заняття цікаві, результат помітний дуже швидко.»</p>
+        </div>
+        <div class="card">
+            ⭐⭐⭐⭐⭐
+            <p>«Атмосфера мотивує, викладачі підтримують і пояснюють доступно.»</p>
+        </div>
+        <div class="card">
+            ⭐⭐⭐⭐⭐
+            <p>«Найкраща школа іноземних мов, де я навчався.»</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Готові почати?</h2>
+    <p>Запишіться на безкоштовне пробне заняття вже сьогодні</p>
+    <a href="#">Записатися</a>
+</section>
+
+<footer>
+    © 2026 NUG — Школа іноземних мов. Усі права захищені.
+</footer>
+
+</body>
+</html>
