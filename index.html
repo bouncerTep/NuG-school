@@ -224,12 +224,26 @@ card.classList.add('show');
 
 function sendToViber(e){
 e.preventDefault();
-let name=document.getElementById("name").value;
-let phone=document.getElementById("phone").value;
-let message=document.getElementById("message").value;
 
-let text=`Нова заявка з сайту NUG:%0AІм'я: ${name}%0AТелефон: ${phone}%0AПовідомлення: ${message}`;
-window.open(`https://invite.viber.com/?number=380982474272&text=${text}`);
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let message = document.getElementById("message").value;
+
+let text = `Нова заявка з сайту NUG:
+Ім'я: ${name}
+Телефон: ${phone}
+Повідомлення: ${message}`;
+
+let encodedText = encodeURIComponent(text);
+
+// Спочатку відкриваємо чат
+window.location.href = "viber://chat?number=%2B380982474272";
+
+// Через 1 секунду копіюємо текст у буфер
+setTimeout(()=>{
+navigator.clipboard.writeText(text);
+alert("Текст заявки скопійовано. Вставте його в чат Viber.");
+},1000);
 }
 </script>
 
