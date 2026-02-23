@@ -3,54 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NUG — Преміальна школа мов</title>
+<title>NUG — Школа іноземних мов | Вінниця</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
 --emerald:#0f3d3e;
---emerald-light:#136f63;
 --gold:#d4af37;
---bg:#f5f7f6;
+--bg:#f4f7f6;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-font-family:'Inter',sans-serif;
-background:var(--bg);
-color:#222;
-}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:#222;}
 
 nav{
 background:var(--emerald);
-padding:20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+padding:15px 30px;
 color:white;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-}
+nav img{height:50px;}
+nav a{color:white;text-decoration:none;margin-left:25px;}
 
 header{
 background:linear-gradient(rgba(15,61,62,0.85),rgba(15,61,62,0.85)),
-url('https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=1600');
+url('classroom1.jpg');
 background-size:cover;
 background-position:center;
 color:white;
 text-align:center;
-padding:120px 20px;
+padding:140px 20px;
 }
 
 header h1{
 font-family:'Playfair Display',serif;
-font-size:52px;
+font-size:54px;
 }
 
 section{
@@ -61,82 +52,32 @@ padding:80px 20px;
 
 h2{
 font-family:'Playfair Display',serif;
-text-align:center;
-margin-bottom:50px;
 color:var(--emerald);
+margin-bottom:40px;
+text-align:center;
 }
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:40px;
+gap:30px;
 }
 
 .card{
 background:white;
-border-radius:16px;
+border-radius:20px;
 overflow:hidden;
-box-shadow:0 15px 40px rgba(0,0,0,0.08);
-opacity:0;
-transform:translateY(40px);
-transition:0.8s;
+box-shadow:0 15px 40px rgba(0,0,0,0.1);
 }
 
-.card.show{
-opacity:1;
-transform:translateY(0);
-}
+.card img{width:100%;height:250px;object-fit:cover;}
 
-.card img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
+.card-content{padding:25px;}
 
-.card-content{
-padding:25px;
-}
-
-.cta{
-background:var(--emerald);
-color:white;
-text-align:center;
-padding:80px 20px;
-}
-
-.btn{
-display:inline-block;
-padding:15px 35px;
-border-radius:40px;
-background:var(--gold);
-color:black;
-text-decoration:none;
-font-weight:600;
-margin-top:20px;
-}
-
-form{
-max-width:500px;
-margin:40px auto 0;
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-input,textarea{
-padding:12px;
-border-radius:8px;
-border:1px solid #ccc;
-font-size:16px;
-}
-
-button{
-background:var(--gold);
-border:none;
-padding:15px;
-border-radius:30px;
-font-weight:600;
-cursor:pointer;
+.map-container{
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,0.1);
 }
 
 footer{
@@ -144,108 +85,135 @@ background:#111;
 color:#aaa;
 text-align:center;
 padding:30px;
+margin-top:60px;
 }
+
+/* Floating buttons */
+
+.floating{
+position:fixed;
+right:20px;
+bottom:20px;
+display:flex;
+flex-direction:column;
+gap:15px;
+z-index:999;
+}
+
+.floating a{
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.viber{background:#7360f2;}
+.whatsapp{background:#25D366;}
+
+.floating svg{width:28px;height:28px;fill:white;}
 </style>
 </head>
+
 <body>
 
 <nav>
-<div><strong>NUG</strong></div>
+<img src="logo.png" alt="NUG Logo">
 <div>
-<a href="about.html">Про нас</a>
+<a href="#about">Про нас</a>
+<a href="#graduates">Наші випускники</a>
 <a href="#contact">Контакти</a>
 </div>
 </nav>
 
 <header>
 <h1>NUG</h1>
-<p>Преміальна школа іноземних мов для дітей</p>
+<p>Англійська та Німецька мови для дітей | м. Вінниця</p>
 </header>
 
-<section>
-<h2>Наш підхід</h2>
+<section id="about">
+<h2>Про нас</h2>
+
 <div class="grid">
 <div class="card">
-<img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1600">
+<img src="teacher.jpg">
 <div class="card-content">
-<h3>Інтерактивні заняття</h3>
-<p>Діти навчаються через практику та живе спілкування.</p>
+<h3>Викладач</h3>
+<p>Кандидат у доктори філологічних наук. Багаторічний досвід викладання англійської мови.</p>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1600">
+<img src="classroom1.jpg">
 <div class="card-content">
-<h3>Комфортні класи</h3>
-<p>Сучасний простір та безпечна атмосфера.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1584697964403-5d7b0e7f6b76?q=80&w=1600">
-<div class="card-content">
-<h3>Результат</h3>
-<p>Ваша дитина почне говорити з перших занять.</p>
+<h3>Комфортні умови</h3>
+<p>Декілька сучасних кабінетів для навчання та зручна зона очікування для батьків.</p>
 </div>
 </div>
 </div>
 </section>
 
-<section class="cta" id="contact">
-<h2>Запис на пробне заняття</h2>
+<section id="graduates">
+<h2>Наші випускники</h2>
 
-<a class="btn" href= "viber://chat?number=%2B380982474272" >
-Написати у Viber
-</a>
+<div class="grid">
 
-<form onsubmit="sendToViber(event)">
-<input type="text" id="name" placeholder="Ім'я" required>
-<input type="tel" id="phone" placeholder="Телефон" required>
-<textarea id="message" placeholder="Вік дитини та коментар"></textarea>
-<button type="submit">Відправити заявку</button>
-</form>
+<div class="card">
+<img src="https://picsum.photos/600/400?random=10">
+<div class="card-content">
+<h3>Анна К.</h3>
+<p>Рівень B2 з англійської. Навчається в Польщі.</p>
+</div>
+</div>
 
+<div class="card">
+<img src="https://picsum.photos/600/400?random=12">
+<div class="card-content">
+<h3>Максим Л.</h3>
+<p>Рівень B1 з німецької. Успішно склав Goethe-Zertifikat.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<h2>Контакти</h2>
+
+<p style="text-align:center;margin-bottom:30px;">
+м. Вінниця, вул. Героїв Нацгвардії 8
+</p>
+
+<div class="map-container">
+<iframe 
+src="https://www.google.com/maps?q=Вінниця,вул.Героїв+Нацгвардії+8&output=embed"
+width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+</iframe>
+</div>
 </section>
 
 <footer>
-© 2026 NUG — Усі права захищені
+© 2026 NUG — Школа іноземних мов
 </footer>
 
-<script>
-const cards=document.querySelectorAll('.card');
-window.addEventListener('scroll',()=>{
-cards.forEach(card=>{
-const top=card.getBoundingClientRect().top;
-if(top<window.innerHeight-100){
-card.classList.add('show');
-}
-});
-});
+<!-- Floating Messenger Buttons -->
+<div class="floating">
 
-function sendToViber(e){
-e.preventDefault();
+<a href="viber://chat?number=%2B380982474272" class="viber">
+<svg viewBox="0 0 24 24">
+<path d="M21.5 12c0-4.7-3.9-8.5-8.7-8.5S4.1 7.3 4.1 12c0 1.6.5 3.1 1.3 4.4L4 21l4.8-1.3c1.2.6 2.6.9 4 .9 4.8 0 8.7-3.8 8.7-8.6z"/>
+</svg>
+</a>
 
-let name = document.getElementById("name").value;
-let phone = document.getElementById("phone").value;
-let message = document.getElementById("message").value;
+<a href="https://wa.me/380982474272" class="whatsapp">
+<svg viewBox="0 0 24 24">
+<path d="M20 3.5A10 10 0 003.5 20L3 21l1.5-.5A10 10 0 1020 3.5zm-8 15a7 7 0 01-3.7-1l-.3-.2-2.2.6.6-2.1-.2-.3A7 7 0 1112 18.5z"/>
+</svg>
+</a>
 
-let text = `Нова заявка з сайту NUG:
-Ім'я: ${name}
-Телефон: ${phone}
-Повідомлення: ${message}`;
-
-let encodedText = encodeURIComponent(text);
-
-// Спочатку відкриваємо чат
-window.location.href = "viber://chat?number=%2B380982474272";
-
-// Через 1 секунду копіюємо текст у буфер
-setTimeout(()=>{
-navigator.clipboard.writeText(text);
-alert("Текст заявки скопійовано. Вставте його в чат Viber.");
-},1000);
-}
-</script>
+</div>
 
 </body>
 </html>
