@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NUG — Private Language School | Vinnytsia</title>
+<title>NUG — Private International Language School</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -15,8 +15,7 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:var(--light);color:#222;}
-
+body{font-family:'Inter',sans-serif;background:var(--light);color:#222;overflow-x:hidden;}
 h1,h2,h3{font-family:'Playfair Display',serif;}
 
 nav{
@@ -24,37 +23,29 @@ background:var(--emerald);
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 40px;
+padding:18px 40px;
 color:white;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin-left:25px;
-font-weight:500;
-}
-
-.lang-switch{
-display:flex;
-align-items:center;
-gap:10px;
+margin:0 12px;
+font-size:15px;
 }
 
 .lang-switch img{
-width:28px;
+width:26px;
 cursor:pointer;
-transition:0.3s;
-border-radius:4px;
-}
-
-.lang-switch img:hover{
-transform:scale(1.1);
+margin-left:8px;
 }
 
 header{
 background:linear-gradient(rgba(15,61,62,0.85),rgba(15,61,62,0.85)),
-url('https://images.unsplash.com/photo-1509062522246-3755977927d7');
+url('classroom.jpg');
 background-size:cover;
 background-position:center;
 color:white;
@@ -62,92 +53,149 @@ text-align:center;
 padding:160px 20px;
 }
 
-header h1{font-size:60px;margin-bottom:20px;}
-header p{font-size:20px;}
+header h1{font-size:58px;margin-bottom:20px;letter-spacing:2px;}
 
-section{padding:100px 20px;max-width:1200px;margin:auto;}
-
-h2{text-align:center;margin-bottom:60px;color:var(--emerald);font-size:36px;}
-
-.carousel{position:relative;overflow:hidden;border-radius:25px;box-shadow:0 25px 60px rgba(0,0,0,0.15);}
-.slides{display:flex;transition:0.6s ease;}
-.slide{min-width:100%;position:relative;}
-.slide img{width:100%;height:550px;object-fit:cover;}
-
-.caption{
-position:absolute;
-bottom:50px;
-left:50px;
-background:rgba(15,61,62,0.9);
-color:white;
-padding:35px;
-border-radius:20px;
-max-width:500px;
+section{
+padding:90px 20px;
+max-width:1200px;
+margin:auto;
 }
+
+h2{
+text-align:center;
+margin-bottom:60px;
+color:var(--emerald);
+font-size:34px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:40px;
+}
+
+.card{
+background:white;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 20px 50px rgba(0,0,0,0.08);
+transform:translateY(50px);
+opacity:0;
+transition:0.7s ease;
+}
+
+.card.visible{
+transform:translateY(0);
+opacity:1;
+}
+
+.card img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.card-content{padding:30px;}
+
+.carousel{
+position:relative;
+overflow:hidden;
+border-radius:25px;
+box-shadow:0 20px 50px rgba(0,0,0,0.1);
+}
+
+.slides{display:flex;transition:0.6s ease;}
+.slide{min-width:100%;}
+.slide img{width:100%;height:450px;object-fit:cover;}
 
 .prev,.next{
 position:absolute;
 top:50%;
 transform:translateY(-50%);
-background:rgba(0,0,0,0.5);
+background:rgba(0,0,0,0.4);
 color:white;
 border:none;
-padding:15px 20px;
+padding:10px 16px;
 cursor:pointer;
-font-size:22px;
 }
 .prev{left:15px;}
 .next{right:15px;}
 
 .pricing-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:40px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
 }
 
 .price-card{
 background:white;
-padding:45px;
+padding:40px;
 border-radius:25px;
-box-shadow:0 20px 50px rgba(0,0,0,0.1);
-transition:0.4s;
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
+transform:translateY(50px);
+opacity:0;
+transition:0.7s ease;
 }
-.price-card:hover{transform:translateY(-10px);}
-.price{font-size:28px;color:var(--gold);margin:20px 0;font-weight:600;}
-.featured{border:2px solid var(--gold);transform:scale(1.05);}
 
-.map-container{
+.price-card.visible{
+transform:translateY(0);
+opacity:1;
+}
+
+.price{
+font-size:26px;
+color:var(--gold);
+margin:15px 0;
+font-weight:600;
+}
+
+/* Form */
+.form-box{
+background:white;
+padding:40px;
 border-radius:25px;
-overflow:hidden;
-box-shadow:0 20px 50px rgba(0,0,0,0.1);
+box-shadow:0 20px 50px rgba(0,0,0,0.08);
+max-width:600px;
+margin:auto;
+}
+
+.form-box input,.form-box select,.form-box textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border-radius:10px;
+border:1px solid #ccc;
+font-family:'Inter';
+}
+
+.form-box button{
+background:var(--emerald);
+color:white;
+border:none;
+padding:12px;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+transition:0.3s;
+}
+
+.form-box button:hover{
+background:var(--gold);
+color:#111;
 }
 
 footer{
 background:#111;
 color:#aaa;
 text-align:center;
-padding:40px;
-margin-top:60px;
+padding:30px;
+margin-top:80px;
 }
 
-/* Floating buttons */
-.floating{
-position:fixed;
-right:20px;
-bottom:20px;
-display:flex;
-flex-direction:column;
-gap:15px;
-z-index:999;
+@media(max-width:768px){
+header h1{font-size:40px;}
+nav{flex-direction:column;gap:10px;}
 }
-.floating a{
-width:60px;height:60px;border-radius:50%;
-display:flex;align-items:center;justify-content:center;
-box-shadow:0 15px 30px rgba(0,0,0,0.25);
-}
-.viber{background:#7360f2;}
-.whatsapp{background:#25D366;}
-.floating svg{width:28px;height:28px;fill:white;}
 </style>
 </head>
 
@@ -155,142 +203,131 @@ box-shadow:0 15px 30px rgba(0,0,0,0.25);
 
 <nav>
 <div><strong>NUG</strong></div>
-
-<div style="display:flex;align-items:center;gap:30px;">
-<a href="#programs" data-i18n="nav_programs">Навчання</a>
-<a href="#pricing" data-i18n="nav_pricing">Вартість</a>
-<a href="#contact" data-i18n="nav_contact">Контакти</a>
-
-<div class="lang-switch">
+<div>
+<a href="#about">Про нас</a>
+<a href="#pricing">Вартість</a>
+<a href="#register">Онлайн запис</a>
+<a href="#contact">Контакти</a>
+<span class="lang-switch">
 <img src="https://flagcdn.com/w40/ua.png" onclick="setLang('uk')">
 <img src="https://flagcdn.com/w40/gb.png" onclick="setLang('en')">
 <img src="https://flagcdn.com/w40/de.png" onclick="setLang('de')">
-</div>
+</span>
 </div>
 </nav>
 
 <header>
 <h1>NUG</h1>
-<p data-i18n="header_sub">Приватна школа англійської та німецької мов | м. Вінниця</p>
+<p>Приватна міжнародна школа мов у Вінниці</p>
 </header>
 
-<section id="programs">
-<h2 data-i18n="programs_title">Формат навчання</h2>
+<section id="about">
+<h2>Про нас</h2>
+<div class="grid">
+<div class="card">
+<img src="teacher.jpg">
+<div class="card-content">
+<h3>Викладач</h3>
+<p>Професійний досвід, академічна база та сучасні міжнародні методики викладання.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="students.jpg">
+<div class="card-content">
+<h3>Наші студенти</h3>
+<p>Успішна підготовка до міжнародних іспитів та навчання за кордоном.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Наш простір</h2>
+<div class="carousel">
+<div class="slides">
+<div class="slide"><img src="classroom.jpg"></div>
+<div class="slide"><img src="students.jpg"></div>
+<div class="slide"><img src="teacher.jpg"></div>
+</div>
+<button class="prev">❮</button>
+<button class="next">❯</button>
+</div>
 </section>
 
 <section id="pricing">
-<h2 data-i18n="pricing_title">Формати навчання та вартість</h2>
-
+<h2>Формати навчання</h2>
 <div class="pricing-grid">
-
 <div class="price-card">
-<h3 data-i18n="group_big">Група 5–8 учнів</h3>
-<div class="price">400 грн / lesson</div>
-<p data-i18n="group_big_desc">
-Ідеальний баланс між командною динамікою та увагою до кожного.
-</p>
+<h3>Група 5–8 учнів</h3>
+<div class="price">400 грн / заняття</div>
 </div>
-
-<div class="price-card featured">
-<h3 data-i18n="group_small">Малі групи 2–4 учні</h3>
-<div class="price">425 грн / lesson</div>
-<p data-i18n="group_small_desc">
-Персоналізований підхід та максимальна залученість кожного учня.
-</p>
-</div>
-
 <div class="price-card">
-<h3 data-i18n="individual">Індивідуально</h3>
-<div class="price">500 грн / lesson</div>
-<p data-i18n="individual_desc">
-Повна концентрація на цілях дитини та швидкий результат.
-</p>
+<h3>Малі групи 2–4 учні</h3>
+<div class="price">425 грн / заняття</div>
 </div>
+<div class="price-card">
+<h3>Індивідуально</h3>
+<div class="price">500 грн / заняття</div>
+</div>
+</div>
+</section>
 
+<section id="register">
+<h2>Онлайн запис</h2>
+<div class="form-box">
+<form action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST">
+<input type="text" name="name" placeholder="Ім’я" required>
+<input type="tel" name="phone" placeholder="Телефон" required>
+<select name="format">
+<option>Група 5–8</option>
+<option>Мала група 2–4</option>
+<option>Індивідуально</option>
+</select>
+<textarea name="message" placeholder="Коментар"></textarea>
+<button type="submit">Записатися</button>
+</form>
 </div>
 </section>
 
 <section id="contact">
-<h2 data-i18n="contact_title">Контакти</h2>
-<p style="text-align:center;margin-bottom:30px;">
-м. Вінниця, вул. Героїв Нацгвардії 8
-</p>
-
-<div class="map-container">
-<iframe 
-src="https://www.google.com/maps?q=Вінниця,вул.Героїв+Нацгвардії+8&output=embed"
-width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-</iframe>
-</div>
+<h2>Контакти</h2>
+<iframe src="https://www.google.com/maps?q=Вінниця,вул.Героїв+Нацгвардії+8&output=embed"
+width="100%" height="400" style="border:0;border-radius:20px;"></iframe>
 </section>
 
-<footer>
-© 2026 NUG
-</footer>
-
-<div class="floating">
-<a href="viber://chat?number=%2B380982474272" class="viber">
-<svg viewBox="0 0 24 24"><path d="M21.5 12c0-4.7-3.9-8.5-8.7-8.5S4.1 7.3 4.1 12c0 1.6.5 3.1 1.3 4.4L4 21l4.8-1.3c1.2.6 2.6.9 4 .9 4.8 0 8.7-3.8 8.7-8.6z"/></svg>
-</a>
-<a href="https://wa.me/380982474272" class="whatsapp">
-<svg viewBox="0 0 24 24"><path d="M20 3.5A10 10 0 003.5 20L3 21l1.5-.5A10 10 0 1020 3.5z"/></svg>
-</a>
-</div>
+<footer>© 2026 NUG — Private Language School</footer>
 
 <script>
-const translations = {
-uk:{
-nav_programs:"Навчання",
-nav_pricing:"Вартість",
-nav_contact:"Контакти",
-header_sub:"Приватна школа англійської та німецької мов | м. Вінниця",
-programs_title:"Формат навчання",
-pricing_title:"Формати навчання та вартість",
-group_big:"Група 5–8 учнів",
-group_big_desc:"Ідеальний баланс між командною динамікою та увагою до кожного.",
-group_small:"Малі групи 2–4 учні",
-group_small_desc:"Персоналізований підхід та максимальна залученість кожного учня.",
-individual:"Індивідуально",
-individual_desc:"Повна концентрація на цілях дитини та швидкий результат.",
-contact_title:"Контакти"
-},
-en:{
-nav_programs:"Programs",
-nav_pricing:"Pricing",
-nav_contact:"Contact",
-header_sub:"Private English & German School | Vinnytsia",
-programs_title:"Learning Format",
-pricing_title:"Learning Options & Pricing",
-group_big:"Group 5–8 students",
-group_big_desc:"Perfect balance between teamwork and personal attention.",
-group_small:"Mini group 2–4 students",
-group_small_desc:"Personalised approach and faster progress.",
-individual:"Individual lessons",
-individual_desc:"Full focus on your child’s goals and fast results.",
-contact_title:"Contact"
-},
-de:{
-nav_programs:"Programme",
-nav_pricing:"Preise",
-nav_contact:"Kontakt",
-header_sub:"Private Englisch- und Deutschschule | Winnyzja",
-programs_title:"Unterrichtsformat",
-pricing_title:"Unterrichtsoptionen & Preise",
-group_big:"Gruppe 5–8 Schüler",
-group_big_desc:"Ideales Gleichgewicht zwischen Teamarbeit und individueller Aufmerksamkeit.",
-group_small:"Kleine Gruppe 2–4 Schüler",
-group_small_desc:"Individueller Ansatz und schneller Fortschritt.",
-individual:"Einzelunterricht",
-individual_desc:"Volle Konzentration auf die Ziele des Kindes.",
-contact_title:"Kontakt"
-}
-};
-
-function setLang(lang){
-document.querySelectorAll("[data-i18n]").forEach(el=>{
-el.innerText = translations[lang][el.dataset.i18n];
+// Scroll animation
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add('visible');}
 });
+});
+document.querySelectorAll('.card,.price-card').forEach(el=>observer.observe(el));
+
+// Carousel auto
+const slides=document.querySelector('.slides');
+const slide=document.querySelectorAll('.slide');
+let index=0;
+
+function showSlide(i){
+slides.style.transform=`translateX(-${i*100}%)`;
 }
+
+function nextSlide(){
+index=(index+1)%slide.length;
+showSlide(index);
+}
+
+setInterval(nextSlide,4000);
+
+document.querySelector('.next').onclick=nextSlide;
+document.querySelector('.prev').onclick=()=>{
+index=(index-1+slide.length)%slide.length;
+showSlide(index);
+};
 </script>
 
 </body>
